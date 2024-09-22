@@ -10,6 +10,7 @@ export default function SelectionViewPage() {
   return (
     <div>
         <h2>Select Roll</h2>
+        <div></div>
         <div className='role-option' onClick={()=> handleSelect('admin')}>Admin</div>
         <div className='role-option' onClick={()=> handleSelect('user')}>User</div>
     </div>

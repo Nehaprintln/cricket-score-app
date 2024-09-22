@@ -149,7 +149,8 @@ const fetchMatchData = async () => {
           {[...Array(6)].map((_, i) => (
             <div
               key={i}
-              className={`ball ${i === currentBall ? 'active' : ''}`}
+            //   className={`ball ${i === currentBall ? 'active' : ''}`}
+            className={`ball ${balls[i] ? (balls[i].isWicket ? 'wicket' : `run-${balls[i].run}`) : ''} ${i === currentBall ? 'active' : ''}`}
               onClick={() => i === currentBall && handleCurrentBallClick()} // Show options only for the current ball
             >
               {balls[i] ? (balls[i].isWicket ? 'W' : balls[i].run) : '-'}
@@ -167,7 +168,7 @@ const fetchMatchData = async () => {
   
         {/* Show options when the current ball is clicked */}
         {showOptions && (
-          <div className="ball-options" ref={ballOptionsRef}>
+          <div className="ball-options" ref={ballOptionsRef}> {/*//TODO: working on div*/}
             <button onClick={() => handleBallClick(0, false)}>0</button>
             <button onClick={() => handleBallClick(1, false)}>1</button>
             <button onClick={() => handleBallClick(2, false)}>2</button>
