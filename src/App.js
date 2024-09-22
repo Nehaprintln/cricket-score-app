@@ -1,10 +1,10 @@
+import React from 'react'
+import AdminView from './components/AdminComponent/AdminView'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      react
+    <div>
+      <AdminView />
     </div>
-  );
+  )
 }
-
-export default App;

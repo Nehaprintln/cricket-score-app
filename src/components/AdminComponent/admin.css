@@ -1,0 +1,40 @@
+
+.ball {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    /* border: 0.5px solid #111; */
+    /* background-color: #fff; */
+  }
+  
+  .ball.active {
+    border: 2px solid blue;
+    /* border-top: 2px solid #e5ff00;
+    border-left: 2px solid rgb(102, 194, 108);
+    border-bottom: 2px solid rgb(219, 133, 34);
+    border-right: 2px solid rgb(192, 24, 97); */
+    box-shadow: 0.3px 0.3px 4px blue;
+    animation: spin 1s infinite;
+  }
+  
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* .ball-options{
+    border: 1px solid red;
+  } */
+  
