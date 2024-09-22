@@ -3,7 +3,7 @@ import { Children, createContext, useState } from "react";
 
 export const ScoreContext = createContext();
 
-//neha
+//nehasd
 export default function ScoreProvider({children}) {
 
     const [score, setScore] = useState(0);
