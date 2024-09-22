@@ -1,13 +1,15 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React, {useState, useRef, useEffect, useContext} from 'react'
 import './admin.css';
+import { ScoreContext } from '../ScoreComponents/ScoreContext';
 
 export default function AdminView() {
-    const [score, setScore] = useState(0);
-    const [wickets, setWickets] = useState(0);
-    const [over, setOver] = useState(0); // current over
-    const [currentBall, setCurrentBall] = useState(0); // current ball in over
-    const [balls, setBalls] = useState([]); // Store data for balls in current over
-    const [oversData, setOversData] = useState([]); // Store data for all overs
+    // const [score, setScore] = useState(0);
+    // const [wickets, setWickets] = useState(0);
+    // const [over, setOver] = useState(0); // current over
+    // const [currentBall, setCurrentBall] = useState(0); // current ball in over
+    // const [balls, setBalls] = useState([]); // Store data for balls in current over
+    // const [oversData, setOversData] = useState([]); // Store data for all overs
+    const {score, setScore, wickets, setWickets, over, setOver, currentBall, setCurrentBall, balls, setBalls, oversData, setOversData} = useContext(ScoreContext);
     const [showOptions, setShowOptions] = useState(false); // Show options on ball click
     const url = "http://localhost:5000";
     // Ref to track ball options for closing it when clicking outside
@@ -133,7 +135,7 @@ const fetchMatchData = async () => {
       }, [ballOptionsRef]);
   
     return (
-      <div>
+      <div className='admin'>
         <h1>Score: {score}/{wickets}</h1>
         {/* <h2>
           Over: {over}.{currentBall}
