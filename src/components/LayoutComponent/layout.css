@@ -8,11 +8,11 @@ body{
     align-items: center; */
 }
 .layout-container{
-    width: 300px;
+    max-width: 1200px;
+    width: 370px;
     height: 800px;
     /* height: 10%; */
     /* border: 1px solid red; */
-    max-width: 1200px;
     /* text-align: center; */
     margin:50px auto;
     padding: 20px;
@@ -22,6 +22,7 @@ body{
     overflow: hidden;
     overflow-y: scroll;
     clip-path: inset(0 round 20px);
+    border: 1px solid red;
 }
 ::-webkit-scrollbar{
     width: 8px;
@@ -31,9 +32,9 @@ body{
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 12px;
 }
-/* .page-content { */
+ .page-content {
     /* margin-top: 20px; */
-    /* padding: 20px;
-    background-color: #f8f9fa; */
+     /* padding: 20px 0; */
+    /* background-color: #f8f9fa;  */
     /* border-radius: 8px; */
-  /* } */
+  } 

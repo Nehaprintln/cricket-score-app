@@ -1,5 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import { ScoreContext } from '../ScoreComponents/ScoreContext';
+// import '../AdminComponent/adnim.css';
+
 
 export default function UserView() {
     const {score, setScore, wickets, setWickets, over, setOver, currentBall, setCurrentBall, balls, setBalls, oversData, setOversData} = useContext(ScoreContext);
@@ -24,7 +26,7 @@ export default function UserView() {
     }, []);
 
     return (
-        <div>
+        <div className='admin'>
             <h1>Score: {score}/{wickets}</h1>
             <h2>Over: {currentBall === 6 ? `${over + 1}.0` : `${over}.${currentBall}`}</h2>
 
@@ -32,7 +34,8 @@ export default function UserView() {
                 {[...Array(6)].map((_, i) => (
                     <div
                         key={i}
-                        className={`ball ${i === currentBall ? 'active' : ''}`}
+                        // className={`ball ${i === currentBall ? 'active' : ''}`}
+                        className={`ball ${balls[i] ? (balls[i].isWicket ? 'wicket' : `run-${balls[i].run}`) : ''} ${i === currentBall ? 'active' : ''}`}
                     >
                         {balls[i] ? (balls[i].isWicket ? 'W' : balls[i].run) : '-'}
                     </div>
