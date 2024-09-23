@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { ScoreContext } from '../ScoreComponents/ScoreContext';
+import Layout from '../LayoutComponent/Layout';
 // import '../AdminComponent/adnim.css';
 
 
@@ -24,34 +25,8 @@ export default function UserView() {
     useEffect(() => {
         fetchMatchData();
     }, []);
-
-    // return (
-    //     <div className='admin'>
-    //         <h1>Score: {score}/{wickets}</h1>
-    //         <h2>Over: {currentBall === 6 ? `${over + 1}.0` : `${over}.${currentBall}`}</h2>
-
-    //         <div className="balls-container">
-    //             {[...Array(6)].map((_, i) => (
-    //                 <div
-    //                     key={i}
-    //                     // className={`ball ${i === currentBall ? 'active' : ''}`}
-    //                     className={`ball ${balls[i] ? (balls[i].isWicket ? 'wicket' : `run-${balls[i].run}`) : ''} ${i === currentBall ? 'active' : ''}`}
-    //                 >
-    //                     {balls[i] ? (balls[i].isWicket ? 'W' : balls[i].run) : '-'}
-    //                 </div>
-    //             ))}
-    //         </div>
-
-    //         <div className="overs-summary">
-    //             {oversData.slice(0, -1).reverse().map((over, index) => (
-    //                 <div key={index}>
-    //                     Over {oversData.length - 1 - index}: {over.balls.map((ball, i) => (ball.isWicket ? 'W' : ball.run)).join(', ')}
-    //                 </div>
-    //             ))}
-    //         </div>
-    //     </div>
-    // );
     return (
+        <Layout>
         <div className="admin">
             <div className="scroll">
             <div className="scores-display">
@@ -70,6 +45,7 @@ export default function UserView() {
                 {[...Array(6)].map((_, i) => (
                 <div
                 key={i}
+                style={{ cursor: 'default' }}
                 //   className={`ball ${i === currentBall ? 'active' : ''}`}
                 className={`ball ${balls[i] ? balls[i].isWicket ? "wicket" : `run-${balls[i].run}` : ""} ${i === currentBall ? "active" : ""}`}>
                     {balls[i] ? (balls[i].isWicket ? "W" : balls[i].run) : "-"}
@@ -141,5 +117,7 @@ export default function UserView() {
     </div>
 </div>
 </div>
-);
+        </Layout>
+        
+    );
 }

@@ -10,7 +10,7 @@ export default function App() {
     <div>
       {/* <AdminView /> */}
       {/* <SelectionViewPage /> */}
-      <Layout>
+      {/* <Layout> */}
         <ScoreProvider>
           <Router>
             <Routes>
@@ -20,7 +20,7 @@ export default function App() {
             </Routes>
           </Router>
         </ScoreProvider>
-      </Layout>
+      {/* </Layout> */}
      
       
     </div>

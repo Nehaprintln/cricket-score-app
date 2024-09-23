@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import "./admin.css";
 import { ScoreContext } from "../ScoreComponents/ScoreContext";
+import Layout from "../LayoutComponent/Layout";
 
 export default function AdminView() {
   const {score, setScore, wickets, setWickets, over, setOver, currentBall, setCurrentBall, balls,
@@ -96,6 +97,7 @@ export default function AdminView() {
             }
             fetchMatchData(); //TODO: 22.
             
+            
                 // window.addEventListener("scroll", handleScroll); //TODO: scroll
                 document.addEventListener("mousedown", handleClickOutside);
                 
@@ -107,6 +109,7 @@ export default function AdminView() {
             //   console.log(oversData)
             
             return (
+                <Layout>
                 <div className="admin">
                     <div className="scroll">
                     <div className="scores-display">
@@ -127,8 +130,8 @@ export default function AdminView() {
                         key={i}
                         //   className={`ball ${i === currentBall ? 'active' : ''}`}
                         className={`ball ${balls[i] ? balls[i].isWicket ? "wicket" : `run-${balls[i].run}` : ""} ${i === currentBall ? "active" : ""}`}
-                            onClick={() => i === currentBall && handleCurrentBallClick()}
-                            >
+                        onClick={() => i === currentBall && handleCurrentBallClick()}
+                        >
                             {balls[i] ? (balls[i].isWicket ? "W" : balls[i].run) : "-"}
                         </div>
                         ))}
@@ -186,13 +189,13 @@ export default function AdminView() {
                        <div className="overs-summary">
                         {oversData
                      .slice(0, -1).reverse().map((over, index) => (
-                    <div key={index} style={{ display: "flex",justifyContent: 'space-around',gap: '20px', marginBottom: '5px'}}>
+                         <div key={index} style={{ display: "flex",justifyContent: 'space-around',gap: '20px', marginBottom: '5px'}}>
                     <div style={{ width: "15%",height: '40px',textAlign: 'center',paddingTop: '8px', margin: '6px 0' }}>
                     {oversData.length - 1 - index}
                     </div>
                     <div style={{ width: "80%",height: '40px',textAlign: 'center',padding: '5px 7px', display: "flex", gap: "10px", border: '1px solid gray', margin: '5px',height: '40px' }}>
                     {over.balls.map((ball, i) => (
-                    
+                        
                         <div
                         key={i}
                         style={{
@@ -226,5 +229,6 @@ export default function AdminView() {
             </div>
         </div>
     </div>
+    </Layout>             
   );
 }

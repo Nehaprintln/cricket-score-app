@@ -1,26 +1,10 @@
-/* *{
-  margin: 0;
-  padding: 0;
-} */
+
 .balls-div{
   border: 1px solid #111;
-  /* width: 100%; */
   height: 70px;
-  /* text-align: center; */
 }
 .balls-container .ball {
-    /* width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ddd;
-    display: inline-block;
-    margin: 5px;
-    position: relative;
-    text-align: center;
-    line-height: 30px; */
-    /* border: 0.5px solid #111; */
-    /* background-color: #fff; */
-    width: 40px;
+  width: 40px;
   height: 40px;
   border-radius: 50%;
   display: inline-flex;
@@ -39,28 +23,10 @@
   
   .ball.active {
     border: 2px solid blue;
-    /* border-top: 2px solid #e5ff00;
-    border-left: 2px solid rgb(102, 194, 108);
-    border-bottom: 2px solid rgb(219, 133, 34);
-    border-right: 2px solid rgb(192, 24, 97); */
     box-shadow: 0.3px 0.3px 4px blue;
     animation: spin 1s infinite;
   }
 
-  /* .ball.active:not(p) {
-    border: 2px solid blue;
-    box-shadow: 0.3px 0.3px 4px blue;
-    animation: spin 1s infinite;
-  }
-  .ball.active > *:not(p) {
-    animation: spin 1s infinite;
-  }
-  .ball.active > p {
-    animation: none !important;
-    box-shadow: none;
-    border: none;
-  } */
-  
   @keyframes spin {
     from {
       transform: rotate(0deg);
@@ -70,10 +36,6 @@
     }
   }
  
-
-  /* .ball-options{
-    border: 1px solid red;
-  } */
   .ball-options button {
     width: 40px;
     height: 40px;
@@ -85,36 +47,31 @@
     font-size: 13px;
     /* font-weight: bold; */
   }
-  /* .ball-options button:focus {
-    outline: none;
-  } */
-  .ball-options button:nth-child(1) { /* 0 run - no background color */
+  
+  .ball-options button:nth-child(1) { 
     background-color: transparent;
     border: 0.5px solid gray;
   }
-  .ball-options button:nth-child(2), /* 1, 2, 3 runs - grey color */
+  .ball-options button:nth-child(2),
 .ball-options button:nth-child(3),
 .ball-options button:nth-child(4) {
   background-color: #b8b7b7;
   color: white;
 }
-.ball-options button:nth-child(5) { /* 4 runs - blue color */
+.ball-options button:nth-child(5) { 
   background-color: #64dbd1;
   color: white;
 }
-.ball-options button:nth-child(6) { /* 6 runs - green color */
+.ball-options button:nth-child(6) { 
   background-color: #119e71;
   color: white;
 }
-.ball-options button:nth-child(7) { /* Out - red color */
+.ball-options button:nth-child(7) { 
   background-color: #f1361d;
   color: white;
 }
-/* .balls-container .ball.active {
-  border: 2px solid black;
-} */
 
-/* Ball background colors based on run selection */
+
 .balls-container .ball.run-0 {
   background-color: transparent;
 }
@@ -149,21 +106,14 @@
   text-align: right;
 }
 .ball-para{
-  /* position: absolute;
-  left: 54%;
-  top: 29.5%; */
   margin: 0;
   padding-top: 8px;
   font-size: 14px;
   font-weight: 500;
 }
 .ball-options{
-  /* position: absolute; */
-  /* left: 10px;  */
-  /* top: 33%; */
   width: 200px;
   border: 1px dotted red;
-  /* background: rgba(189, 185, 185, 0.4); */
   border-radius: 5px;
 }
 
@@ -204,10 +154,7 @@ text-align: center;
 
 .scores-wicket-display{
   margin-top: -0.5px;
-  /* width: 100px; */
-  /* padding: 0; */
-  /* color: #111; */
-  /* border: 1px solid red; */
+  
 }
 .ovres-display{
   margin-top: -25px;
@@ -218,5 +165,4 @@ text-align: center;
 .balls-container p{
   font-size: 16px;
   font-weight: 700;
-  /* margin-left: 0px; */
 }
